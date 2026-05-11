@@ -23,8 +23,8 @@ jobs:
           - os: windows-latest
             label: windows-x64
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v6
         with:
           node-version: "26"
       - run: npm install
@@ -53,8 +53,8 @@ jobs:
             label: windows-x64
             binary: node-sea-cli-example.exe
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v6
         with:
           node-version: "26"
       - run: npm install
@@ -69,9 +69,9 @@ jobs:
     name: Build & E2E (linux-arm64 via QEMU)
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - name: Set up QEMU
-        uses: docker/setup-qemu-action@v3
+        uses: docker/setup-qemu-action@v4
         with:
           platforms: arm64
       - name: Build and test in ARM64 container
@@ -104,13 +104,13 @@ jobs:
             artifact: node-sea-cli-example-windows-x64.exe
             binary: node-sea-cli-example.exe
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v6
         with:
           node-version: "26"
       - run: npm install
       - run: npm run build
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         with:
           name: ${{ matrix.artifact }}
           path: dist/${{ matrix.binary }}
@@ -121,9 +121,9 @@ jobs:
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - name: Set up QEMU
-        uses: docker/setup-qemu-action@v3
+        uses: docker/setup-qemu-action@v4
         with:
           platforms: arm64
       - name: Build in ARM64 container
@@ -132,7 +132,7 @@ jobs:
             npm install &&
             npm run build
           "
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         with:
           name: node-sea-cli-example-linux-arm64
           path: dist/node-sea-cli-example
