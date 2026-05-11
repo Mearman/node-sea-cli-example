@@ -1,0 +1,21 @@
+{
+  "name": "node-sea-cli-example",
+  "version": "0.1.0",
+  "description": "Example CLI built as a Node.js SEA (Single Executable Application)",
+  "type": "module",
+  "engines": {
+    "node": ">=25.7.0"
+  },
+  "scripts": {
+    "build": "tsdown",
+    "test:unit": "node --experimental-strip-types --test tests/unit/**/*.test.ts",
+    "test:integration": "node --experimental-strip-types --test tests/integration/**/*.test.ts",
+    "test:e2e": "node --experimental-strip-types --test tests/e2e/**/*.test.ts",
+    "test": "npm run test:unit && npm run test:integration && npm run test:e2e"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "tsdown": "^0.22.0",
+    "typescript": "^5.8.0"
+  }
+}
