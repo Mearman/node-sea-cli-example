@@ -18,8 +18,8 @@ jobs:
             label: linux-x64
           - os: macos-latest
             label: macos-arm64
-          - os: macos-13
-            label: macos-x64
+          # - os: macos-13
+          #   label: macos-x64
           - os: windows-latest
             label: windows-x64
     steps:
@@ -46,9 +46,9 @@ jobs:
           - os: macos-latest
             label: macos-arm64
             binary: node-sea-cli-example
-          - os: macos-13
-            label: macos-x64
-            binary: node-sea-cli-example
+          # - os: macos-13
+          #   label: macos-x64
+          #   binary: node-sea-cli-example
           - os: windows-latest
             label: windows-x64
             binary: node-sea-cli-example.exe
@@ -97,9 +97,9 @@ jobs:
           - os: macos-latest
             artifact: node-sea-cli-example-macos-arm64
             binary: node-sea-cli-example
-          - os: macos-13
-            artifact: node-sea-cli-example-macos-x64
-            binary: node-sea-cli-example
+          # - os: macos-13
+          #   artifact: node-sea-cli-example-macos-x64
+          #   binary: node-sea-cli-example
           - os: windows-latest
             artifact: node-sea-cli-example-windows-x64.exe
             binary: node-sea-cli-example.exe
