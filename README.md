@@ -1,5 +1,7 @@
 # node-sea-cli-example
 
+[![GitHub](https://img.shields.io/badge/GitHub-181717?logo=github&logoColor=white)](https://github.com/Mearman/node-sea-cli-example) [![CI](https://img.shields.io/github/actions/workflow/status/Mearman/node-sea-cli-example/ci.yml?branch=main)](https://github.com/Mearman/node-sea-cli-example/actions)
+
 Example CLI tool built as a Node.js Single Executable Application (SEA). Demonstrates how to bundle TypeScript into a standalone binary using [tsdown](https://tsdown.dev/) with its built-in `exe` option.
 
 ## What it does
